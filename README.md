@@ -54,34 +54,6 @@ This project allows users to browse, search, and purchase sweets, while admin us
 * Restock sweets (Admin only)
 * Purchase button disabled when stock is zero
 
----
-
-## 🗂️ Project Structure
-
-```
-SweetsShopManagement/
-│
-├── SweetsShopAPI/
-│   ├── alembic/            # Database migrations
-│   ├── app/
-│   │   ├── api/            # API routes
-│   │   ├── core/           # Config, security, JWT
-│   │   ├── models/         # SQLAlchemy models
-│   │   ├── schemas/        # Pydantic schemas
-│   │   ├── repositories/  # Repository layer
-│   │   ├── services/       # Business logic
-│   │   └── main.py         # FastAPI entry point
-│   ├── tests/              # Pytest test cases
-│   ├── requirements.txt
-│   ├── alembic.ini
-│   └── sweet_shop.db
-│
-└── frontend/
-    ├── src/
-    ├── components/
-    ├── pages/
-    └── services/
-```
 
 ---
 
