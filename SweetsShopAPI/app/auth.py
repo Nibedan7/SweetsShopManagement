@@ -5,7 +5,8 @@ from passlib.context import CryptContext
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
-from . import models, database, schemas
+from . import  database, schemas
+from app.models.auth_model import User as AuthUser
 
 # Secret key and algorithm for JWT
 SECRET_KEY = "a_very_secret_key_that_should_be_in_an_env_file"
@@ -44,13 +45,13 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = De
             raise credentials_exception
     except JWTError:
         raise credentials_exception
-    user = db.query(models.User).filter(models.User.username == username).first()
+    user = db.query(AuthUser).filter(AuthUser.username == username).first()
     if user is None:
         raise credentials_exception
     return user
 
 # Dependency to check if the current user is an admin
-async def get_current_admin_user(current_user: models.User = Depends(get_current_user)):
+async def get_current_admin_user(current_user: AuthUser = Depends(get_current_user)):
     if not current_user.is_admin:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,

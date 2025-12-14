@@ -3,7 +3,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from app.main import app
 from app.database import Base, get_db
-from app import crud, schemas
+from app.crudoperation.sweets_crud import create_sweet
+from app.schemas.sweets_chemas import SweetCreate as SweetCreateSchema
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
 engine = create_engine(
@@ -56,7 +57,7 @@ def test_create_sweet():
 
 def test_read_sweets():
     db = TestingSessionLocal()
-    crud.create_sweet(db, schemas.SweetCreate(name="Gummy Bears", category="Gummy", price=2.0, quantity=50))
+    create_sweet(db, SweetCreateSchema(name="Gummy Bears", category="Gummy", price=2.0, quantity=50))
     db.close()
 
     response = client.get("/api/sweets/")
