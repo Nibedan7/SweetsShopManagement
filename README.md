@@ -1,8 +1,8 @@
 # 🍬 SweetsShopManagement
 
-A **full‑stack Sweet Shop Management System** built as part of a **TDD Kata assessment**, demonstrating clean architecture, Test‑Driven Development, secure authentication, and modern frontend practices.
+A **full‑stack Sweet Shop Management System** built as part of a **TDD Kata assessment**. This project demonstrates **Test‑Driven Development (TDD)**, **clean architecture**, **secure authentication**, and a **modern React frontend**.
 
-This project allows users to browse, search, and purchase sweets, while admin users can manage inventory (add, update, delete, restock sweets).
+The application allows users to browse, search, and purchase sweets, while **admin users** can manage inventory (add, update, delete, restock sweets).
 
 ---
 
@@ -11,16 +11,17 @@ This project allows users to browse, search, and purchase sweets, while admin us
 ### Backend
 
 * **Framework:** FastAPI (Python)
-* **Database:** SQLite (Persistent DB)
+* **Database:** SQLite (persistent database)
 * **ORM:** SQLAlchemy
 * **Migrations:** Alembic
 * **Authentication:** JWT (JSON Web Tokens)
 * **Testing:** Pytest
-* **Architecture:** Clean architecture with repository pattern
+* **Architecture:** Clean Architecture with Repository Pattern
 
 ### Frontend
 
 * **Framework:** React
+* **UI Generation:** Lovable.ai (initial UI scaffolding)
 * **State Management:** React Hooks
 * **API Communication:** Axios
 * **Styling:** CSS / modern UI components
@@ -34,26 +35,25 @@ This project allows users to browse, search, and purchase sweets, while admin us
 * User registration
 * User login
 * JWT‑based authentication
-* Role‑based access (User / Admin)
+* Role‑based access control (User / Admin)
 
 ### 🍭 Sweets Management (Protected)
 
-* Add new sweets (Admin only)
+* Add new sweets (**Admin only**)
 * View all sweets
 * Search sweets by:
 
   * Name
   * Category
   * Price range
-* Update sweet details (Admin only)
-* Delete sweets (Admin only)
+* Update sweet details (**Admin only**)
+* Delete sweets (**Admin only**)
 
 ### 📦 Inventory Management
 
-* Purchase sweets (quantity decreases)
-* Restock sweets (Admin only)
+* Purchase sweets (quantity decreases automatically)
+* Restock sweets (**Admin only**)
 * Purchase button disabled when stock is zero
-
 
 ---
 
@@ -97,13 +97,13 @@ alembic upgrade head
 uvicorn app.main:app --reload
 ```
 
-📍 Backend will run at:
+📍 Backend URL:
 
 ```
 http://127.0.0.1:8000
 ```
 
-📘 Swagger Docs:
+📘 Swagger API Docs:
 
 ```
 http://127.0.0.1:8000/docs
@@ -117,12 +117,12 @@ http://127.0.0.1:8000/docs
 pytest -v
 ```
 
-✔️ Tests cover:
+✔️ Test coverage includes:
 
-* Authentication
+* Authentication & authorization
 * Sweets CRUD operations
 * Inventory purchase & restock logic
-* Authorization rules
+* Role‑based access rules
 
 ---
 
@@ -134,7 +134,7 @@ npm install
 npm start
 ```
 
-📍 Frontend runs at:
+📍 Frontend URL:
 
 ```
 http://localhost:3000
@@ -155,57 +155,75 @@ http://localhost:3000
 * `GET /api/sweets`
 * `GET /api/sweets/search`
 * `PUT /api/sweets/{id}`
-* `DELETE /api/sweets/{id}` (Admin only)
+* `DELETE /api/sweets/{id}` (**Admin only**)
 
 ### Inventory
 
 * `POST /api/sweets/{id}/purchase`
-* `POST /api/sweets/{id}/restock` (Admin only)
+* `POST /api/sweets/{id}/restock` (**Admin only**)
+
+---
+
+## 📸 Application Screenshots
+
+> 📌 **Note:** Place screenshots inside a `screenshots/` folder in the root directory and reference them below.
+
+### 🔐 Login Page
+
+![Login Page](screenshots/login.png)
+
+### 🍭 Sweets Listing
+
+![Sweets Listing](screenshots/sweets-list.png)
+
+### 🛒 Purchase Flow
+
+![Purchase Flow](screenshots/purchase.png)
+
+### 🛠️ Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
 
 ---
 
 ## 🧠 Test‑Driven Development (TDD)
 
-This project strictly follows **Red → Green → Refactor**:
+This project strictly follows the **Red → Green → Refactor** cycle:
 
 1. Write failing tests first
 2. Implement minimum logic to pass tests
-3. Refactor for clean code
+3. Refactor for clean, maintainable code
 
-Git commit history reflects this workflow clearly.
+Git commit history clearly reflects this workflow.
 
 ---
 
-## 🤖 My AI Usage
+## 🤖 My AI Usage (Mandatory Section)
 
 ### AI Tools Used
 
-* **ChatGPT**
-* **GLM 4.6**
+* **ChatGPT** – backend logic, testing, debugging
+* **GLM 4.6** – alternative reasoning & validation
+* **Lovable.ai** – frontend UI scaffolding
 
 ### How I Used AI
 
 * Generated initial project structure ideas
 * Assisted in writing unit tests for FastAPI services
-* Helped debug SQLAlchemy & JWT issues
-* Refined API design and repository pattern
+* Debugged SQLAlchemy, Alembic, and JWT issues
+* Helped refine repository pattern and API design
+* Generated frontend UI layouts using Lovable.ai
 * Improved README documentation clarity
 
 ### Reflection
 
-AI significantly improved my productivity by reducing boilerplate effort and speeding up debugging. However, all business logic, architecture decisions, and final implementations were carefully reviewed, modified, and validated by me to ensure correctness and originality.
-
----
-
-## 📸 Screenshots
-
-*(Add screenshots of login, dashboard, admin panel, purchase flow here)*
+AI significantly improved development speed by reducing boilerplate work and accelerating debugging. All **business logic**, **architecture decisions**, and **final implementations** were reviewed, modified, and validated by me to ensure correctness, learning value, and originality.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
 ---
 
@@ -213,6 +231,7 @@ This project is licensed under the MIT License.
 
 * FastAPI & React documentation
 * Pytest community
+* Open‑source contributors
 * AI tools that enhanced development productivity
 
 ---
