@@ -137,7 +137,7 @@ npm start
 📍 Frontend URL:
 
 ```
-http://localhost:3000
+http://localhost:8080
 ```
 
 ---
@@ -168,6 +168,10 @@ http://localhost:3000
 
 > 📌 **Note:** Place screenshots inside a `screenshots/` folder in the root directory and reference them below.
 
+### 🔐 Register Page
+
+![Login Page](screenshots/register.png)
+
 ### 🔐 Login Page
 
 ![Login Page](screenshots/login.png)
@@ -176,9 +180,9 @@ http://localhost:3000
 
 ![Sweets Listing](screenshots/sweets-list.png)
 
-### 🛒 Purchase Flow
+### 🛒 Add Sweet
 
-![Purchase Flow](screenshots/purchase.png)
+![Purchase Flow](screenshots/sweetadd.png)
 
 ### 🛠️ Admin Dashboard
 
